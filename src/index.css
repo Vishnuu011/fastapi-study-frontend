@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(201, 96, 42, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201, 96, 42, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-ink text-cream font-body font-medium px-6 py-3 
+           transition-all duration-200 hover:bg-ink-soft active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-amber-warm focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-transparent text-ink border border-ink font-body 
+           font-medium px-6 py-3 transition-all duration-200 hover:bg-ink hover:text-cream 
+           active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-warm focus:ring-offset-2;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-transparent text-red-700 border border-red-300 
+           font-body font-medium px-4 py-2 text-sm transition-all duration-200 
+           hover:bg-red-700 hover:text-white hover:border-red-700
+           active:scale-95 focus:outline-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-ink-muted font-body font-medium px-4 py-2 
+           text-sm transition-all duration-200 hover:text-ink hover:bg-cream-dark 
+           active:scale-95 focus:outline-none;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-cream-deep text-ink font-body px-4 py-3 
+           placeholder-ink-muted/50 transition-all duration-200
+           focus:outline-none focus:border-amber-warm focus:ring-1 focus:ring-amber-warm/30;
+  }
+
+  .card {
+    @apply bg-white border border-cream-deep transition-all duration-200 hover:border-amber-warm/40 hover:shadow-md;
+  }
+
+  .divider {
+    @apply border-t border-cream-deep;
+  }
+
+  .page-title {
+    @apply font-display font-bold text-4xl md:text-5xl text-ink leading-tight tracking-tight;
+  }
+
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-amber-warm font-medium;
+  }
+
+  .prose-content {
+    @apply font-body text-ink/80 leading-relaxed;
+  }
+}
+
+/* Staggered animation utility */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f4ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9d1c4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9602a;
+}
+
+/* Selection */
+::selection {
+  background-color: #f5dece;
+  color: #0f0e0d;
+}
